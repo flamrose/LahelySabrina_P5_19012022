@@ -4,7 +4,7 @@ fetch('http://localhost:3000/api/products')
 .then (canapes => {
     let affichage = '';
     for (let canap of canapes){
-        
+        //Gabarits délimités par des accents graves (permet d'utiliser la fonctionnalité d'interpolation). L'attr href parametré par id de chaque canap
         affichage += `<a href="./product.html?id=${canap._id}">
         <article>
           <img src="${canap.imageUrl}" alt="${canap.altTxt}">
@@ -13,7 +13,7 @@ fetch('http://localhost:3000/api/products')
         </article>
       </a>`
     }
-    //affichage += ';
+    //affichage += '';
 document.querySelector('#items').innerHTML = affichage;
 })
 .catch (err => console.log ('erreur:'+err));
